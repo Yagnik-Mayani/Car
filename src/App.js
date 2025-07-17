@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Accessories from "./pages/Accessories";
+import Owners from "./pages/Owners";
+import Services from "./pages/Services"; // <-- Import Services
+import './input.css'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="min-h-screen bg-gray-50">
+        <div className="sticky top-0 z-50">
+          <Navbar />
+        </div>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <div id="home">
+                  <Home />
+                </div>
+                <div id="services">
+                  <Services />
+                </div>
+                <div id="accessories">
+                  <Accessories />
+                </div>
+                <div id="owners">
+                  <Owners />
+                </div>
+              </>
+            }
+          />
+          <Route path="/services" element={<Services />} />
+          <Route path="/accessories" element={<Accessories />} />
+          <Route path="/owners" element={<Owners />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
-
 export default App;
