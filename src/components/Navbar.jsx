@@ -8,12 +8,14 @@ const loadFont = () => {
   document.head.appendChild(link);
 };
 
-// Smooth scroll to section
+// Smooth scroll to section with slight delay
 const scrollToSection = (id) => {
-  const section = document.getElementById(id);
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth" });
-  }
+  setTimeout(() => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  }, 100); // Delay to ensure section is rendered
 };
 
 const Navbar = () => {

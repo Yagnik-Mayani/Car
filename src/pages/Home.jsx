@@ -85,7 +85,6 @@ const Home = () => {
 
       {/* Accessories Section */}
       <section
-        id="accessories"
         className="relative py-20 px-6"
         style={{
           backgroundImage: `url(${back2})`,
