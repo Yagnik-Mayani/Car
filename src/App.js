@@ -5,7 +5,10 @@ import Home from "./pages/Home";
 import Accessories from "./pages/Accessories";
 import Owners from "./pages/Owners";
 import Services from "./pages/Services"; // <-- Import Services
-import './input.css'
+import './input.css';
+import ScrollToTopButton from "./components/ScrollToTopButton";
+import Chatbot from "./components/Chatbotwidget";
+
 
 function App() {
   return (
@@ -38,6 +41,8 @@ function App() {
           <Route path="/accessories" element={<Accessories />} />
           <Route path="/owners" element={<Owners />} />
         </Routes>
+         <ScrollToTopButton />
+        <Chatbot />
       </div>
     </Router>
   );

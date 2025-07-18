@@ -8,18 +8,18 @@ const owners = [
     email: "harikrishnamotors@gmail.com",
     address:
       "Greenland chokdi, Kuvavda Road, Bombay Super Mall, Same Shree Hari Krishna Motors, Rajkot",
-    workingHours: "Mon - Sat: 9:00 AM – 7:00 PM",
+    workingHours: "Mon - Sun:  24*7",
     garageType: "Multi-Brand Car Service & Accessories",
   },
   {
     id: 2,
-    name: "Paras Kachhi",
+    name: "Paras Khachhi",
     phone: "8758283642",
     email: "parasgarage@gmail.com",
     address:
       "Greenland chokdi, Kuvavda Road, Bombay Super Mall, Same Shree Hari Krishna Motors, Rajkot",
-    workingHours: "Mon - Sat: 9:00 AM – 7:00 PM",
-    garageType: "Authorized Car Repair & Customization",
+    workingHours: "Mon - Sun:  24*7",
+    garageType: "Multi-Brand Car Service & Accessories",
   },
 ];
 
