@@ -7,6 +7,7 @@ const ChatbotWidget = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [isListening, setIsListening] = useState(false);
+  const [hasGreeted, setHasGreeted] = useState(false);
   const recognitionRef = useRef(null);
   const messagesEndRef = useRef(null);
 
@@ -20,12 +21,15 @@ const ChatbotWidget = () => {
   };
 
   useEffect(() => {
-    if (open && messages.length === 0) {
+    if (open && !hasGreeted) {
       setTimeout(() => {
         addBotMessage("Hello, how are you?");
+        setHasGreeted(true);
       }, 500);
     }
+  },);
 
+  useEffect(() => {
     const SpeechRecognition =
       window.SpeechRecognition || window.webkitSpeechRecognition;
 
@@ -49,7 +53,7 @@ const ChatbotWidget = () => {
 
       recognitionRef.current = recognition;
     }
-  },);
+  }, []);
 
   useEffect(() => {
     if (messagesEndRef.current) {
@@ -101,22 +105,22 @@ const ChatbotWidget = () => {
   };
 
   return (
-    <div className="fixed bottom-6 left-6 z-50">
+    <div className="fixed bottom-4 left-4 z-50 sm:bottom-6 sm:left-6">
       {/* Toggle Button */}
       <button
         onClick={() => setOpen(!open)}
         className="focus:outline-none"
         style={{ all: "unset", cursor: "pointer" }}
       >
-        <img src={Ai} alt="Chatbot" className="w-16 h-16 object-contain" />
+        <img src={Ai} alt="Chatbot" className="w-14 h-14 sm:w-16 sm:h-16 object-contain" />
       </button>
 
       {/* Chat Window */}
       {open && (
-        <div className="mt-3 w-80 h-96 bg-white rounded-xl shadow-xl p-4 border border-gray-300 flex flex-col">
+        <div className="mt-3 w-[90vw] max-w-xs sm:max-w-sm h-[75vh] sm:h-96 bg-white rounded-xl shadow-xl p-4 border border-gray-300 flex flex-col">
           {/* Header */}
           <div className="flex justify-between items-center mb-2">
-            <h2 className="font-bold text-lg text-gray-800">Chat Support</h2>
+            <h2 className="font-bold text-base sm:text-lg text-gray-800">Chat Support</h2>
             <button
               onClick={() => setOpen(false)}
               className="text-sm text-red-500 font-bold"
@@ -169,7 +173,7 @@ const ChatbotWidget = () => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Type a message..."
-              className="flex-1 px-3 py-2 focus:outline-none"
+              className="flex-1 px-3 py-2 text-sm focus:outline-none"
             />
             <button
               type="button"
@@ -187,7 +191,6 @@ const ChatbotWidget = () => {
               Send
             </button>
           </form>
-
         </div>
       )}
     </div>
