@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import alloy from "../assets/alloy.webp";
-import fog from "../assets/fog.webp";
+import stering from '../assets/stering.jpg';
+import battery from "../assets/battery.jpg";
 import seatcover from "../assets/seat cover.webp";
 import stereo from "../assets/stereos.png";
 import mat from "../assets/mat.jpg";
@@ -9,8 +9,8 @@ import camera from "../assets/camera.webp";
 
 const Accessories = () => {
   const [accessories] = useState([
-    { id: 1, name: "Alloy Wheels", price: 5000, available: true, img: alloy },
-    { id: 2, name: "Fog Lights", price: 3000, available: false, img: fog },
+    { id: 1, name: "Stering", price: 5000, available: true, img: stering },
+    { id: 2, name: "Battery", price: 5900, available: false, img: battery},
     { id: 3, name: "Seat Covers", price: 2500, available: true, img: seatcover },
     { id: 4, name: "Stereo System", price: 7000, available: true, img: stereo },
     { id: 5, name: "Floor Mats", price: 1200, available: true, img: mat },

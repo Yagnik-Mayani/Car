@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import logo from "../assets/logo.png"; // 🔁 Replace with your actual logo path
 
 // Load Poppins font dynamically
 const loadFont = () => {
@@ -38,7 +39,11 @@ const Navbar = () => {
         className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center"
         style={{ fontFamily: "'Poppins', sans-serif" }}
       >
-        <h1 className="text-2xl font-bold text-indigo-700">HariKrishna Motors</h1>
+        {/* Logo and Brand */}
+        <div className="flex items-center gap-2">
+          <img src={logo} alt="Logo" className="h-12 w-12 object-contain" />
+          <h1 className="text-2xl font-bold text-indigo-700">HariKrishna Motors</h1>
+        </div>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-6">

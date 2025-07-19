@@ -5,20 +5,19 @@ const owners = [
     id: 1,
     name: "Ajay Dhaduk",
     phone: "6354885890",
-    email: "harikrishnamotors@gmail.com",
+    email: "ajaydhaduk60@gmail.com",
     address:
-      "Greenland chokdi, Kuvavda Road, Bombay Super Mall, Same Shree Hari Krishna Motors, Rajkot",
-    workingHours: "Mon - Sun:  24*7",
+      "Greenland chokdi, Kuvavda Road, Bombay Super Mall Same, Shree Hari Krishna Motors, Rajkot",
+    workingHours: "Mon - Sun:  24 Hours",
     garageType: "Multi-Brand Car Service & Accessories",
   },
   {
     id: 2,
-    name: "Paras Khachhi",
-    phone: "8758283642",
-    email: "parasgarage@gmail.com",
+    name: "Paras Kachchhi",
+    phone: "6352231903",
     address:
-      "Greenland chokdi, Kuvavda Road, Bombay Super Mall, Same Shree Hari Krishna Motors, Rajkot",
-    workingHours: "Mon - Sun:  24*7",
+      "Greenland chokdi, Kuvavda Road, Bombay Super Mall Same, Shree Hari Krishna Motors, Rajkot",
+    workingHours: "Mon - Sun:  24 Hours",
     garageType: "Multi-Brand Car Service & Accessories",
   },
 ];
@@ -69,10 +68,14 @@ const Footer = () => {
                 <span className="font-semibold text-blue-400">Phone:</span>{" "}
                 {owner.phone}
               </p>
-              <p className="text-sm text-gray-200 mb-1">
-                <span className="font-semibold text-blue-400">Email:</span>{" "}
-                {owner.email}
-              </p>
+
+              {owner.email && (
+                <p className="text-sm text-gray-200 mb-1">
+                  <span className="font-semibold text-blue-400">Email:</span>{" "}
+                  {owner.email}
+                </p>
+              )}
+
               <p className="text-sm text-gray-200 mb-1">
                 <span className="font-semibold text-blue-400">Garage Type:</span>{" "}
                 {owner.garageType}
@@ -87,6 +90,7 @@ const Footer = () => {
               </p>
             </div>
           ))}
+
         </div>
 
         <p className="text-center text-sm text-gray-400 mt-10">
